@@ -15,6 +15,12 @@ interface PersonalInfo {
   giturl: string;
 }
 
+const images = [
+  '/imageslide/1.PNG',
+  '/imageslide/2.PNG',
+  '/imageslide/3.PNG',
+];
+
 const personalInfoList: PersonalInfo[] = [
   {
     name: "นายวงศกร เสมูล",
@@ -38,6 +44,8 @@ const personalInfoList: PersonalInfo[] = [
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -131,25 +139,43 @@ export default function Home() {
           </section>
 
           <section id="about" className="bg-white rounded-lg shadow-lg p-8 mb-16 transform hover:-translate-y-1 transition-all duration-300">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                image slide
-              </div>
-              <div>
-                <h2>QR Code Repo</h2>
-                <div className="w-64 h-64 border-2 border-gray-200 rounded-lg p-4">
-                  <Image
-                    src="/qrc/sjhb-pos67.png" // Path to the QR code image
-                    alt="QR Code"
-                    width={256}
-                    height={256}
-                    className="mx-auto"
-                  />
-                </div>
-              </div>
-
+  <div className="grid md:grid-cols-2 gap-8">
+    {/* Image Slider */}
+    <div className="space-y-4">
+      <h2 className="text-2xl font-semibold text-amber-800 mb-4">Image Slide</h2>
+      <div className="relative w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
+        <div className="flex space-x-4 overflow-x-scroll snap-x snap-mandatory">
+          {images.map((src, index) => (
+            <div key={index} className="flex-none w-full md:w-1/2 h-full snap-center">
+              <Image
+                src={src} // Path to the image
+                alt={`Image ${index + 1}`}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-lg transition-transform duration-300 transform hover:scale-105"
+              />
             </div>
-          </section>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* QR Code Repo */}
+    <div className="space-y-4">
+      <h2 className="text-2xl font-semibold text-amber-800 mb-4">QR Code Repo</h2>
+      <div className="w-64 h-64 border-4 border-amber-600 rounded-lg p-4 shadow-xl flex justify-center items-center bg-white">
+        <Image
+          src="/qrc/sjhb-pos67.png" // Path to the QR code image
+          alt="QR Code"
+          width={256}
+          height={256}
+          className="mx-auto transition-transform duration-300 transform hover:scale-105"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
 
           {/* Personal Info Section */}
           <section id="contact" className="bg-white rounded-lg shadow-lg p-8 mb-16">
