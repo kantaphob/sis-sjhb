@@ -1,7 +1,8 @@
 // pages/index.tsx
 import Head from 'next/head';
 import Link from 'next/link';
-import { FaFacebook, FaEnvelope, FaLine, FaPhone, FaInstagram } from 'react-icons/fa';
+import { FaFacebook, FaEnvelope, FaGithub, FaLine, FaPhone, FaInstagram, FaMapMarkerAlt } from 'react-icons/fa';
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface PersonalInfo {
@@ -11,6 +12,7 @@ interface PersonalInfo {
   instaramUrl: string;
   email: string;
   major: string;
+  giturl: string;
 }
 
 const personalInfoList: PersonalInfo[] = [
@@ -19,6 +21,7 @@ const personalInfoList: PersonalInfo[] = [
     studentId: "64143151",
     facebookUrl: "https://www.facebook.com/profile.php?id=100006534248058",
     instaramUrl: "https://www.instagram.com/deww_wongsakorn/",
+    giturl: "https://github.com/kantaphob/sjhb-pos67",
     email: "64143151@cmru.ac.th",
     major: "วิทยาการคอมพิวเตอร์"
   },
@@ -27,13 +30,13 @@ const personalInfoList: PersonalInfo[] = [
     studentId: "64143203",
     facebookUrl: "https://www.facebook.com/ohmspk.namtharong",
     instaramUrl: "https://www.instagram.com/ohmspk.namtharong",
+    giturl: "https://github.com/kantaphob/sjhb-pos67",
     email: "64143203@cmru.ac.th",
     major: "วิทยาการคอมพิวเตอร์"
   }
 ];
 
 export default function Home() {
-  const [activeIndex, setActiveIndex] = useState(0);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -63,7 +66,7 @@ export default function Home() {
               ))}
             </div>
             {/* Mobile menu button */}
-            <button 
+            <button
               className="md:hidden"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
@@ -124,6 +127,28 @@ export default function Home() {
                 เป็นช่องทางหลักในการสั่งซื้อ
               </p>
             </div>
+
+          </section>
+
+          <section id="about" className="bg-white rounded-lg shadow-lg p-8 mb-16 transform hover:-translate-y-1 transition-all duration-300">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                image slide
+              </div>
+              <div>
+                <h2>QR Code Repo</h2>
+                <div className="w-64 h-64 border-2 border-gray-200 rounded-lg p-4">
+                  <Image
+                    src="/qrc/sjhb-pos67.png" // Path to the QR code image
+                    alt="QR Code"
+                    width={256}
+                    height={256}
+                    className="mx-auto"
+                  />
+                </div>
+              </div>
+
+            </div>
           </section>
 
           {/* Personal Info Section */}
@@ -132,7 +157,7 @@ export default function Home() {
               ข้อมูลส่วนตัว
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              {personalInfoList.map((info, index) => (
+              {personalInfoList.map((info) => (
                 <div
                   key={info.studentId}
                   className="space-y-4 p-6 rounded-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
@@ -175,6 +200,15 @@ export default function Home() {
                       <FaEnvelope className="w-6 h-6 mr-2" />
                       Email
                     </a>
+                    <a
+                      href="https://github.com/username"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center text-gray-800 hover:text-gray-900 transform hover:scale-110 transition-all duration-300"
+                    >
+                      <FaGithub className="w-6 h-6 mr-2" />
+                      GitHub
+                    </a>
                   </div>
                 </div>
               ))}
@@ -208,9 +242,17 @@ export default function Home() {
             </div>
             <div className="transform hover:-translate-y-1 transition-transform duration-300">
               <h3 className="text-xl font-semibold mb-4">ที่อยู่</h3>
-              <p>ร้านใส่ใจ ฮอมบาร์</p>
-              <p>ถนนXXX ตำบลXXX</p>
-              <p>อำเภอXXX จังหวัดXXX</p>
+              <p>ร้านใส่ใจ ฮอมบาร์ (Sai Jai Hom Bar)</p>
+              <p>เลขที่ 70 หมู่ที่ 8 ตำบลขี้เหล็ก</p>
+              <p>ออำเภอแม่ริม จังหวัดเชียงใหม่ </p>
+              <a
+                href="https://maps.app.goo.gl/SstmQ1onNpdwWEBu7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center hover:text-amber-200 transition-colors duration-300"
+              >
+                <FaMapMarkerAlt className="mr-2 animate-bounce" /> ดูแผนที่
+              </a>
             </div>
           </div>
           <div className="mt-8 pt-4 border-t border-amber-700 text-center">
