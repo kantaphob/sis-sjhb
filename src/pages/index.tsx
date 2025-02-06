@@ -1,6 +1,5 @@
 // pages/index.tsx
 import Head from 'next/head'
-import Image from 'next/image'
 import { FaFacebook, FaEnvelope } from 'react-icons/fa'
 
 interface PersonalInfo {
