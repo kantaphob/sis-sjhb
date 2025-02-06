@@ -109,7 +109,7 @@ export default function Home() {
           {/* Welcome Section with animation */}
           <section id="home" className="text-center mb-16 transform hover:scale-105 transition-all duration-500">
             <h1 className="text-4xl md:text-6xl font-bold text-amber-800 mb-4 animate-fadeIn">
-              Welcome to POS SaiJaiHomBar
+              ใส่ใจโฮมบาร์ - Best time of the day
             </h1>
             <div className="w-24 h-1 bg-amber-600 mx-auto mb-8 transform hover:scale-x-150 transition-transform duration-300"></div>
           </section>
@@ -195,13 +195,13 @@ export default function Home() {
               {/* QR Code Repo */}
               <div className="space-y-4">
                 <h2 className="text-2xl font-semibold text-amber-800 mb-4">QR Code Repo</h2>
-                <div className="w-64 h-64 border-4 border-amber-600 rounded-lg p-4 shadow-xl flex justify-center items-center bg-white">
+                <div className="flex justify-center items-center w-64 h-64 border-4 border-amber-600 rounded-lg p-4 shadow-xl bg-white">
                   <Image
                     src="/qrc/sjhb-pos67.png" // Path to the QR code image
                     alt="QR Code"
                     width={256}
                     height={256}
-                    className="mx-auto transition-transform duration-300 transform hover:scale-105"
+                    className="transition-transform duration-300 transform hover:scale-105"
                   />
                 </div>
               </div>
@@ -281,20 +281,22 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="transform hover:-translate-y-1 transition-transform duration-300">
               <h3 className="text-xl font-semibold mb-4">เวลาทำการ</h3>
-              <p>เปิดทุกวัน</p>
-              <p>08:00 - 16:00 น.</p>
+              <p>เปิด</p>
+              <p>08:00 - 17:00 น.</p>
+              <p>หยุดทุกวันอาทิต</p>
             </div>
             <div className="transform hover:-translate-y-1 transition-transform duration-300">
               <h3 className="text-xl font-semibold mb-4">ติดต่อเรา</h3>
               <div className="space-y-2">
                 <a href="#" className="flex items-center hover:text-amber-200 transition-colors duration-300">
-                  <FaPhone className="mr-2 animate-bounce" /> 099-XXX-XXXX
+                  <FaPhone className="mr-2 animate-bounce" /> 087 300 2909
                 </a>
-                <a href="#" className="flex items-center hover:text-amber-200 transition-colors duration-300">
+                <a href="https://www.facebook.com/profile.php?id=61554402574590&mibextid=LQQJ4d" className="flex items-center hover:text-amber-200 transition-colors duration-300">
                   <FaLine className="mr-2 animate-bounce" /> @saijaibar
                 </a>
-                <a href="#" className="flex items-center hover:text-amber-200 transition-colors duration-300">
+                <a href="https://www.facebook.com/profile.php?id=61554402574590&mibextid=LQQJ4d" className="flex items-center hover:text-amber-200 transition-colors duration-300">
                   <FaFacebook className="mr-2 animate-bounce" /> SaiJaiHomBar
+
                 </a>
               </div>
             </div>
@@ -302,7 +304,7 @@ export default function Home() {
               <h3 className="text-xl font-semibold mb-4">ที่อยู่</h3>
               <p>ร้านใส่ใจ ฮอมบาร์ (Sai Jai Hom Bar)</p>
               <p>เลขที่ 70 หมู่ที่ 8 ตำบลขี้เหล็ก</p>
-              <p>ออำเภอแม่ริม จังหวัดเชียงใหม่ </p>
+              <p>อำเภอแม่ริม จังหวัดเชียงใหม่ </p>
               <a
                 href="https://maps.app.goo.gl/SstmQ1onNpdwWEBu7"
                 target="_blank"
